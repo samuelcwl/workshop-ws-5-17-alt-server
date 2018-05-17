@@ -7,6 +7,11 @@ app = Flask(__name__)
 def index():
     return "Flask App!"
 
+@app.route("/user/<string:name>/")
+def foo(name):
+    return render_template(
+        'test2.html',**locals())
+
 @app.route("/hello")
 def hello_world():
     return "Hello World!"
